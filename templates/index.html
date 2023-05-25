@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri May 26 02:41:05 2023
+
+@author: Sanket
+"""
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>IFSS Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Type_of_matrix" placeholder="Type_of_matrix" required="required" />
+        <input type="text" name="Test_temperature" placeholder="Test_temperature" required="required" />
+		<input type="text" name="Fiber_diameter" placeholder="Fiber_diameter" required="required" />
+		<input type="text" name="Fiber_diameter" placeholder="Fiber_diameter" required="required" />
+		<input type="text" name="Lodaing_rate" placeholder="Lodaing_rate" required="required" />
+		<input type="text" name="Prepare_temperature" placeholder="Prepare_temperature" required="required" />
+		<input type="text" name="Embedded_length" placeholder="Fiber_diameter" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
